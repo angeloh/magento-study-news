@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento backend layout
+ *
+ * @author Magento
+ */
+-->
+<layout>
+    <adminhtml_news_index>
+        <reference name="content">
+            <block type="magentostudy_news/adminhtml_news" name="news" />
+        </reference>
+    </adminhtml_news_index>
+
+    <adminhtml_news_grid>
+        <block type="magentostudy_news/adminhtml_news_grid" name="root"/>
+    </adminhtml_news_grid>
+
+    <adminhtml_news_new>
+        <update handle="adminhtml_news_edit" />
+    </adminhtml_news_new>
+
+    <adminhtml_news_edit>
+        <update handle="editor"/>
+        <reference name="content">
+            <block type="magentostudy_news/adminhtml_news_edit" name="news_edit" />
+        </reference>
+        <reference name="left">
+            <block type="magentostudy_news/adminhtml_news_edit_tabs" name="news_edit_tabs">
+                <block type="magentostudy_news/adminhtml_news_edit_tab_main" name="news_edit_tab_main" />
+                <block type="magentostudy_news/adminhtml_news_edit_tab_content" name="news_edit_tab_content" />
+                <block type="magentostudy_news/adminhtml_news_edit_tab_image" name="news_edit_tab_image" />
+                <action method="addTab"><name>main_section</name><block>news_edit_tab_main</block></action>
+                <action method="addTab"><name>content_section</name><block>news_edit_tab_content</block></action>
+                <action method="addTab"><name>image_section</name><block>news_edit_tab_image</block></action>
+            </block>
+        </reference>
+    </adminhtml_news_edit>
+</layout>

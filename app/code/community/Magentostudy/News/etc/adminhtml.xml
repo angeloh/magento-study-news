@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento admin config
+ *
+ * @author Magento
+ */
+-->
+<config>
+    <menu>
+         <news translate="title" module="magentostudy_news">
+            <title>News</title>
+            <sort_order>65</sort_order>
+            <children>
+                <manage translate="title" module="magentostudy_news">
+                    <title>Manage News</title>
+                    <action>adminhtml/news</action>
+                    <sort_order>50</sort_order>
+                </manage>
+            </children>
+         </news>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <news translate="title" module="magentostudy_news">
+                        <title>News</title>
+                        <sort_order>65</sort_order>
+                        <children>
+                            <manage translate="title">
+                                <title>Manage News</title>
+                                <sort_order>0</sort_order>
+                                <children>
+                                    <save translate="title">
+                                        <title>Save News</title>
+                                        <sort_order>0</sort_order>
+                                    </save>
+                                    <delete translate="title">
+                                        <title>Delete News</title>
+                                        <sort_order>10</sort_order>
+                                    </delete>
+                                </children>
+                            </manage>
+                        </children>
+                    </news>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <news translate="title" module="magentostudy_news">
+                                        <title>News Management</title>
+                                    </news>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
